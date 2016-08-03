@@ -1,0 +1,27 @@
+{
+  "name": "webfonts-aurulent-sans",
+  "version": "1.0.0",
+  "main": [
+    "scss/main.scss",
+    "./fonts/*"
+  ],
+  "ignore": [
+    "config",
+    "docs",
+    "gulp",
+    "lib",
+    "test",
+    "composer.json",
+    "CONTRIBUTING.md",
+    "gulpfile.js",
+    "meteor-README.md",
+    "package.js",
+    "package.json",
+    "sache.json",
+    ".editorconfig",
+    ".npm",
+    ".gitignore",
+    ".npmignore",
+    ".versions"
+  ]
+}

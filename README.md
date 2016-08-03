@@ -1,2 +1,1 @@
-# webfonts--chunkfive
-WebFont Pack for ChunkFive
+# WebFont Pack for ChunkFive

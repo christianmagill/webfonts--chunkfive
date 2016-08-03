@@ -1,0 +1,46 @@
+$font-path: "../fonts/" !default;
+$chunkfive-font-path : $font-path !default;
+
+$webfonts-chunkfive-sans-settings: (
+        font-family: 'ChunkFive',
+        base-names: (
+                400: (
+                        normal: chunkfive-webfont
+                )
+        )
+) !default;
+
+$webfonts-roboto-include: (
+        400: (normal),
+) !default;
+
+@mixin generate-webfonts-chunkfive {
+
+  $font-family: map-get($webfonts-aurulent-sans-settings, font-family);
+  $base-names: map-get($webfonts-aurulent-sans-settings, base-names);
+
+  @each $weight, $styles in $webfonts-aurulent-sans-include {
+    @each $style in $styles {
+      @if (map-has-key($base-names, $weight)) {
+        $base-names-for-given-weight: map-get($base-names, $weight);
+        @if (map-has-key($base-names-for-given-weight, $style)) {
+          $base-name: map-get($base-names-for-given-weight, $style);
+
+          @font-face {
+            font-family: $font-family;
+            src: url('#{$chunkfive-font-path}#{$base-name}.eot');
+            src: url('#{$chunkfive-font-path}#{$base-name}.eot?#iefix') format('embedded-opentype'),
+            url('#{$chunkfive-font-path}#{$base-name}.woff') format('woff'),
+            url('#{$chunkfive-font-path}#{$base-name}.ttf') format('truetype'),
+            url('#{$chunkfive-font-path}#{$base-name}.svg#') format('svg');
+            font-weight: $weight;
+            font-style: $style;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+@include generate-webfonts-chunkfive;
